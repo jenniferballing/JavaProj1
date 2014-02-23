@@ -20,10 +20,14 @@ public class WorkingClass extends JFrame implements ActionListener {
     private yesButtonHandler yesHandler;
     private noButtonHandler noHandler;
 
-
     public WorkingClass(){
 
         setTitle ("20 Incredible Questions");//Who is your incredible alter-ego?
+
+        Container pane= getContentPane();
+        //FlowLayout flow= new FlowLayout(FlowLayout.CENTER);
+        pane.setLayout(new FlowLayout(FlowLayout.CENTER, 1, 200));//http://stackoverflow.com/questions/12544816/java-swing-split-pane-view-layout
+        pane.setBackground(Color.lightGray);// http://www.tns.lcs.mit.edu/manuals/java-api-old/java.awt.Color.html#getRed
 
         //Labels
         QuestionL = new JLabel("Question: ", SwingConstants.LEFT);
@@ -39,11 +43,9 @@ public class WorkingClass extends JFrame implements ActionListener {
 
         //Text fields
         QuestionTF= new JTextField(15);
+        QuestionTF.setBackground(Color.white);
         QuestionTF.setText("Are you ready?");
         QuestionTF.setEditable(false);
-
-        Container pane=getContentPane();
-        pane.setLayout(new GridLayout(2,2));
 
         pane.add(QuestionL);
         pane.add(QuestionTF);

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99958759-980b-4b95-a000-999c9c4d8d6e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkingClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkingClass.java" afterPath="$PROJECT_DIR$/src/WorkingClass.java" />
     </list>
     <ignored path="JavaProj1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,13 +78,14 @@
       <file leaf-file-name="WorkingClass.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WorkingClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="41" selection-start="4433" selection-end="4433" vertical-scroll-proportion="3.1658163" vertical-offset="0" max-vertical-offset="2431">
+            <state line="28" column="62" selection-start="847" selection-end="847" vertical-scroll-proportion="0.53825855" vertical-offset="272" max-vertical-offset="1309">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="method#actionPerformed#0;class#yesButtonHandler#0;class#WorkingClass#0" expanded="false" />
-                <element signature="e#1788#1796#0" expanded="true" />
-                <element signature="e#4299#4307#0" expanded="true" />
+                <element signature="e#2120#2128#0" expanded="true" />
+                <element signature="class#noButtonHandler#0;class#WorkingClass#0" expanded="false" />
+                <element signature="e#4631#4639#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,7 +111,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="7" />
-    <option name="width" value="743" />
+    <option name="width" value="681" />
     <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -368,7 +367,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="0" width="743" height="728" extended-state="0" />
+    <frame x="7" y="0" width="681" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -381,7 +380,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -451,13 +450,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkingClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="41" selection-start="4433" selection-end="4433" vertical-scroll-proportion="3.1658163" vertical-offset="0" max-vertical-offset="2431">
+        <state line="28" column="62" selection-start="847" selection-end="847" vertical-scroll-proportion="0.53825855" vertical-offset="272" max-vertical-offset="1309">
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="method#actionPerformed#0;class#yesButtonHandler#0;class#WorkingClass#0" expanded="false" />
-            <element signature="e#1788#1796#0" expanded="true" />
-            <element signature="e#4299#4307#0" expanded="true" />
+            <element signature="e#2120#2128#0" expanded="true" />
+            <element signature="class#noButtonHandler#0;class#WorkingClass#0" expanded="false" />
+            <element signature="e#4631#4639#0" expanded="true" />
           </folding>
         </state>
       </provider>
