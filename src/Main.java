@@ -1,3 +1,4 @@
+import javax.swing.*;
 
 /**
  * Created by Jennifer Balling on 2/22/14.
@@ -9,7 +10,12 @@ public class Main {
     }
     public static void main(String [] args){
 
-        WorkingClass demo= new WorkingClass();
+        JFrame frame= new JFrame("Incredible Questions");//
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setContentPane(new WorkingClass());
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
 
     }
 }
