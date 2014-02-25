@@ -2,12 +2,17 @@
  * Created by Jennifer Balling on 2/22/14.
  */
 //opening page
+//Counter for questions left.
+//4 clicks per answer
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.awt.image.BufferedImage;
+import java.util.*;
+import java.io.*;
+import javax.imageio.ImageIO;
 
 public class WorkingClass extends JPanel implements ActionListener {
 
@@ -21,26 +26,33 @@ public class WorkingClass extends JPanel implements ActionListener {
     private yesButtonHandler yesHandler;
     private noButtonHandler noHandler;
 
+    private BufferedImage image;
+
     public WorkingClass(){
 
-        JFrame frame = new JFrame("20 Incredible Questions");
+        //IMAGE
+       try{
+           image= ImageIO.read(new File(""))
+       }
 
-        JPanel ContainerPanel= new JPanel();
+
+        //CREATE PANELS
+        JPanel ContainerPanel= new JPanel();//http:stackoverflow.com/questions/10637788/jpanel-within-jframe
         ContainerPanel.setBackground(Color.BLACK);
-        //ContainerPanel.setPreferredSize(300, 400);
-        //Images
+
         JPanel ImagePanel = new JPanel();
         ImagePanel.setBackground(Color.BLACK);
         ImagePanel.setPreferredSize(new Dimension(400,300));
 
-        //Questions
         JPanel QuestionPanel = new JPanel();
         QuestionPanel.setBackground(Color.BLACK);
         QuestionPanel.setPreferredSize(new Dimension(400, 100));
 
         JPanel TitlePanel= new JPanel();
         TitlePanel.setBackground(Color.BLACK);
-        TitleL= new JLabel("Who is your incredible alter-ego?");
+
+        //ADD STUFF TO PANELS
+        TitleL= new JLabel("Who is your Incredible alter-ego?");
         TitleL.setForeground(Color.yellow);
         TitlePanel.add(TitleL);
         QuestionL = new JLabel("Question: ", SwingConstants.LEFT);
@@ -62,59 +74,14 @@ public class WorkingClass extends JPanel implements ActionListener {
         QuestionPanel.add(YesB);
         QuestionPanel.add(NoB);
 
+        //SET PANEL LAYOUT
         ContainerPanel.setLayout(new FlowLayout(FlowLayout.CENTER));//ContainerPanel, FlowLayout(new FlowLayout()));
         ContainerPanel.setPreferredSize(new Dimension(400, 400));
         ContainerPanel.add(TitlePanel);
         ContainerPanel.add(ImagePanel);
         ContainerPanel.add(QuestionPanel);
         add(ContainerPanel, BorderLayout.NORTH);
-        //add(ImagePanel, BorderLayout.CENTER);
-        //add(QuestionPanel, BorderLayout.SOUTH);
-
-        //TitlePanel.add(frame);
-
-
-        //Add Layout
-
-
-
-
-        //TitlePanel.setLayout(new BoxLayout(TitlePanel, BoxLayout.X_AXIS));
-        //TitlePanel.setPreferredSize(new Dimension(100, 10));
-
-        //ImagePanel.setPreferredSize(new Dimension(300, 200));
-        //ImagePanel.setLayout(new BoxLayout());
-
-
-
-
-        /*
-        setTitle ("20 Incredible Questions");//Who is your incredible alter-ego?
-
-        JPanel pane = new JPanel();
-        pane.setBackground(Color.black);
-        pane.setPreferredSize(new Dimension(500, 200));
-        //Container pane= getContentPane();
-        //FlowLayout flow= new FlowLayout(FlowLayout.CENTER);
-        pane.setLayout(new FlowLayout(FlowLayout.CENTER, 1, 10));//www.macs.hw.ac.uk/guidebook/?name=Layouts&page=5   pane.setBackground(Color.lightGray);// http://www.tns.lcs.mit.edu/manuals/java-api-old/java.awt.Color.html#getRed
-        pane.setBackground(Color.BLACK);
-
-        TitleL= new JLabel("Who is your incredible alter-ego?", SwingConstants.CENTER);
-        TitleL.setForeground(Color.yellow);
-        pane.add(TitleL);
-
-
-
-        //frame.add(pane);
-
-        // Must come last
-        setSize(WIDTH, LENGTH);
-        frame.pack();
-        frame.setVisible(true);
-        //setVisible(true);
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);*/
-    }
+}
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -125,68 +92,46 @@ public class WorkingClass extends JPanel implements ActionListener {
 
             ArrayList<String> QA=new ArrayList<String>();
             QA.add("Are you ready?");//0
-            QA.add("Are you male?");//1
-            QA.add("Are you female?");//2
-            QA.add("Are you good?");//3
-            QA.add("Are you evil?");//4
-            QA.add("Are you a Super?");//5
+            QA.add("Please get ready! Are you ready now?");//1
+            QA.add("Are you Super?");//2
+            QA.add("Are you Evil?");//3
+            QA.add("Are you Male?");//4
+            QA.add("Do you love Supers?");//5
             QA.add("Do you wish you were a Super?");//6
-            QA.add("Do you love Supers?");//7
-            QA.add("Do you now hate Supers?");//8
-            QA.add("Are you stretchy?");//9
-            QA.add("Are you Strong?");//10
-            QA.add("Are you Very fast?");//11
-            QA.add("Are you invisible?");//12
-            QA.add("Are you an angry ball of lead?");//13
-            QA.add("Do you need water to use your super power?");//14
+            QA.add("Are you insanely Stretchy?");//7
+            QA.add("Are you very, very Fast?");//8
+            QA.add("Are you a Villain?");//9
+            QA.add("Are you Edna Mode?");//10
+            QA.add("Are you some civilian?");//11
+            QA.add("Are you Syndrome?");//12
+            QA.add("Are you Violet?");//13
+            QA.add("Are you ElastiGirl?");//14
+            QA.add("Are you Mr. Incredible?");//15
+            QA.add("Are you Jack Jack?");//16
+            QA.add("Are you Dash?");//17
+            QA.add("Are you uncontrollably strong?");
+
 
             int a=QA.indexOf(QuestionTF.getText());
-            System.out.println("a: " + a);
-            if(a==0){
-                QuestionTF.setText("Are you male?");
-            }
-            else if(a==1){
-                QuestionTF.setText("Are you evil?");
-            }
-            else if(a==2){
-                QuestionTF.setText("Are you evil?");
-            }
-            else if(a==3){
-                QuestionTF.setText("Are you a Super?");
-            }
-            else if(a==4){
-                QuestionTF.setText("Do you wish you were a Super?");
-            }
-            else if(a==5){
-                QuestionTF.setText("Are you stretchy?");
-            }
-            else if(a==6){
-                QuestionTF.setText("Do you now hate Supers?");
-            }
-            else if(a==7){
-                QuestionTF.setText("Are you Edna Mode?");
-            }
-            else if(a==8){
-                QuestionTF.setText("Are you one of the many silly, yet cleverly named, villains?");
-            }
-            else if(a==9){
-                QuestionTF.setText("Are you ElastiGirl?");
-            }
-            else if(a==10){
-                QuestionTF.setText("Are you Mr. Incredible?");
-            }
-            else if(a==11){
-                QuestionTF.setText("Are you Dash?");
-            }
-            else if(a==12){
-                QuestionTF.setText("Are you Violet?");
-            }
-            else if(a==13){
-                QuestionTF.setText("Are you Jack Jack?");
-            }
-            else if(a==14){
-                QuestionTF.setText("Are you Frozone?");
-            }
+            if(a==0){QuestionTF.setText("Are you Super?");}
+            else if(a==1){QuestionTF.setText("Are you Super?");}
+            else if(a==2){QuestionTF.setText("Are you Male?");}
+            else if(a==3){QuestionTF.setText("Do you wish you were a Super?");}
+            else if(a==4){QuestionTF.setText("Are you very, very Fast?");}
+            else if(a==5){QuestionTF.setText("Are you Edna Mode?");}
+            else if(a==6){QuestionTF.setText("Are you Syndrome?");}
+            else if(a==7){QuestionTF.setText("Are you ElastiGirl?");}
+            else if(a==8){QuestionTF.setText("Are you Dash?");}
+            else if(a==9){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is a Villain!");}
+            else if(a==10){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Edna Mode!");}
+            else if(a==11){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is some random Civilian!");}
+            else if(a==12){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Syndrome!");}
+            else if(a==13){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Violet!");}
+            else if(a==14){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is ElastiGirl!");}
+            else if(a==15){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Mr. Incredible!");}
+            else if(a==16){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Jack Jack!");}
+            else if(a==17){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Dash!");}
+            else if(a==18){QuestionTF.setText("Are you Mr. Incredible?");}
         }
     }
     private class noButtonHandler implements ActionListener{
@@ -194,68 +139,46 @@ public class WorkingClass extends JPanel implements ActionListener {
 
             ArrayList<String> QA=new ArrayList<String>();
             QA.add("Are you ready?");//0
-            QA.add("Are you male?");//1
-            QA.add("Are you female?");//2
-            QA.add("Are you good?");//3
-            QA.add("Are you evil?");//4
-            QA.add("Are you a Super?");//5
+            QA.add("Please get ready! Are you ready now?");//1
+            QA.add("Are you Super?");//2
+            QA.add("Are you Evil?");//3
+            QA.add("Are you Male?");//4
+            QA.add("Do you love Supers?");//5
             QA.add("Do you wish you were a Super?");//6
-            QA.add("Do you love Supers?");//7
-            QA.add("Do you now hate Supers?");//8
-            QA.add("Are you stretchy?");//9
-            QA.add("Are you Strong?");//10
-            QA.add("Are you Very fast?");//11
-            QA.add("Are you invisible?");//12
-            QA.add("Are you an angry ball of lead?");//13
-            QA.add("Do you need water to use your super power?");//14
+            QA.add("Are you insanely Stretchy?");//7
+            QA.add("Are you very, very Fast?");//8
+            QA.add("Are you a Villain?");//9
+            QA.add("Are you Edna Mode?");//10
+            QA.add("Are you some civilian?");//11
+            QA.add("Are you Syndrome?");//12
+            QA.add("Are you Violet?");//13
+            QA.add("Are you ElastiGirl?");//14
+            QA.add("Are you Mr. Incredible?");//15
+            QA.add("Are you Jack Jack?");//16
+            QA.add("Are you Dash?");//17
+            QA.add("Are you uncontrollably strong?");
 
             int a=QA.indexOf(QuestionTF.getText());
             //System.out.println("a: " + a);
-            if(a==0){
-                QuestionTF.setText("Are you ready?");
-            }
-            else if(a==1){
-                QuestionTF.setText("Are you evil?");
-            }
-            else if(a==2){
-                QuestionTF.setText("Are you evil?");
-            }
-            else if(a==3){
-                QuestionTF.setText("Do you wish you were a Super?");
-            }
-            else if(a==4){
-                QuestionTF.setText("Are you a Super?");
-            }
-            else if(a==5){
-                QuestionTF.setText("Do you wish you were a Super?");
-            }
-            else if(a==6){
-                QuestionTF.setText("Have you actually seen this movie?");
-            }
-            else if(a==7){
-                QuestionTF.setText("Are you Edna Mode?");
-            }
-            else if(a==8){
-                QuestionTF.setText("Are you one of the many villains?");
-            }
-            else if(a==9){
-                QuestionTF.setText("Are you Strong?");
-            }
-            else if(a==10){
-                QuestionTF.setText("Are you Very fast?");
-            }
-            else if(a==11){
-                QuestionTF.setText("Are you invisible?");
-            }
-            else if(a==12){
-                QuestionTF.setText("Are you an angry ball of lead?");
-            }
-            else if(a==13){
-                QuestionTF.setText("Do you need water to use your super power?");
-            }
-            else if(a==14){
-                QuestionTF.setText("Are you some random extra?");
-            }
+            if(a==0){QuestionTF.setText("Please get ready! Are you ready now?");}
+            else if (a==1){QuestionTF.setText("Are you ready?");}
+            else if(a==2){QuestionTF.setText("Are you Evil?");}
+            else if(a==3){QuestionTF.setText("Do you love Supers?");}
+            else if(a==4){QuestionTF.setText("Are you insanely Stretchy?");}
+            else if(a==5){QuestionTF.setText("Are you a Villain?");}
+            else if(a==6){QuestionTF.setText("Are you a Villain?");}
+            else if(a==7){QuestionTF.setText("Are you Violet?");}
+            else if(a==8){QuestionTF.setText("Are you uncontrollably strong?");}
+            else if(a==9){QuestionTF.setText("Oh... well this is awkward...");}
+            else if(a==10){QuestionTF.setText("Oh... well this is awkward...");}
+            else if(a==11){QuestionTF.setText("Oh... well this is awkward...");}
+            else if(a==12){QuestionTF.setText("Oh... well this is awkward...");}
+            else if(a==13){QuestionTF.setText("Oh... well this is awkward...");}
+            else if(a==14){QuestionTF.setText("Oh... well this is awkward...");}
+            else if(a==15){QuestionTF.setText("Oh... well this is awkward...");}
+            else if(a==16){QuestionTF.setText("Oh... well this is awkward...");}
+            else if(a==17){QuestionTF.setText("Oh... well this is awkward...");}
+            else if(a==18){QuestionTF.setText("Are you Jack Jack?");}
         }
     }
 }

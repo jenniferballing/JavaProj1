@@ -10,7 +10,7 @@ public class Main {
     }
     public static void main(String [] args){
 
-        JFrame frame= new JFrame("Incredible Questions");//
+        JFrame frame= new JFrame("20 Incredible Questions");//
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setContentPane(new WorkingClass());
         frame.pack();
