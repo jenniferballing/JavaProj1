@@ -21,7 +21,7 @@ public class WorkingClass extends JPanel implements ActionListener {
 
     private JButton YesB, NoB;
     private JLabel QuestionL, TitleL;
-    private JTextField QuestionTF;
+    private JTextField QuestionTF, counterTF, counterNum;
     //private questionArr questionHandler;
     private yesButtonHandler yesHandler;
     private noButtonHandler noHandler;
@@ -57,6 +57,23 @@ public class WorkingClass extends JPanel implements ActionListener {
         TitleL.setForeground(Color.yellow);
         TitleL.setFont(TitleL.getFont().deriveFont(20f));
         TitlePanel.add(TitleL);
+        counterTF= new JTextField();
+        counterTF.setText("Questions left: ");
+        counterTF.setBackground(Color.BLACK);
+        counterTF.setFont(counterTF.getFont().deriveFont(16f));
+        counterTF.setForeground(Color.WHITE);
+        TitlePanel.add(counterTF);
+        counterTF.setEditable(false);
+        counterTF.setHorizontalAlignment(JTextField.RIGHT);
+
+        counterNum= new JTextField();
+        counterNum.setText("15");
+        counterNum.setBackground(Color.BLACK);
+        counterNum.setFont(counterNum.getFont().deriveFont(16f));
+        counterNum.setForeground(Color.WHITE);
+        TitlePanel.add(counterNum);
+        counterNum.setEditable(false);
+        counterNum.setHorizontalAlignment(JTextField.RIGHT);
 
         QuestionL = new JLabel("Question: ", SwingConstants.LEFT);
         QuestionL.setForeground(Color.white); //http://stackoverflow.com/questions/2966334/how-do-i-set-the-colour-of-a-label-coloured-text-in-java
@@ -91,20 +108,8 @@ public class WorkingClass extends JPanel implements ActionListener {
         ContainerPanel.add(QuestionPanel);
         add(ContainerPanel, BorderLayout.NORTH);
 
-        //MAGE
-        /*try{
-            image= ImageIO.read(new File("C:/Users/jensbaby/Documents/IncredibleImage.png"));//http://stackoverflow.com/questions/9001754/path-for-image-loading
-        }catch (IOException ex){
-            System.out.println("Image didn't work, YET");
-        }*/
-
     }
 
-    //@Override
-    /*protected void paintComponent (Graphics g){
-        super.paintComponent(g);
-        g.drawImage(image,0, 0, null);
-    }*/
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -135,25 +140,125 @@ public class WorkingClass extends JPanel implements ActionListener {
 
 
             int a=QA.indexOf(QuestionTF.getText());
+
+            String str= counterNum.getText();
+            int in= Integer.parseInt(str);
+
             if(a==0){QuestionTF.setText("Are you Super?");}
             else if(a==1){QuestionTF.setText("Are you Super?");}
-            else if(a==2){QuestionTF.setText("Are you Male?");}
-            else if(a==3){QuestionTF.setText("Do you wish you were a Super?");}
-            else if(a==4){QuestionTF.setText("Are you very, very Fast?");}
-            else if(a==5){QuestionTF.setText("Are you Edna Mode?");}
-            else if(a==6){QuestionTF.setText("Are you Syndrome?");}
-            else if(a==7){QuestionTF.setText("Are you ElastiGirl?");}
-            else if(a==8){QuestionTF.setText("Are you Dash?");}
-            else if(a==9){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is a Villain!");}
-            else if(a==10){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Edna Mode!");}
-            else if(a==11){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is some random Civilian!");}
-            else if(a==12){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Syndrome!");}
-            else if(a==13){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Violet!");}
-            else if(a==14){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is ElastiGirl!");}
-            else if(a==15){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Mr. Incredible!");}
-            else if(a==16){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Jack Jack!");}
-            else if(a==17){QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Dash!");}
-            else if(a==18){QuestionTF.setText("Are you Mr. Incredible?");}
+            else if(a==2){
+                QuestionTF.setText("Are you Male?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==3){
+                QuestionTF.setText("Do you wish you were a Super?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==4){
+                QuestionTF.setText("Are you very, very Fast?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==5){
+                QuestionTF.setText("Are you Edna Mode?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==6){
+                QuestionTF.setText("Are you Syndrome?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==7){
+                QuestionTF.setText("Are you ElastiGirl?");}
+            else if(a==8){
+                QuestionTF.setText("Are you Dash?");}
+            else if(a==9){
+                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is a Villain!");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==10){
+                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Edna Mode!");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==11){
+                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is some random Civilian!");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==12){
+                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Syndrome!");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==13){
+                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Violet!");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==14){
+                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is ElastiGirl!");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==15){
+                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Mr. Incredible!");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==16){
+                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Jack Jack!");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==17){
+                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Dash!");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==18){
+                QuestionTF.setText("Are you Mr. Incredible?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(in==0 || in<0){
+                QuestionTF.setText("Uh oh. I'm out of Questions!");
+                return;
+            }
         }
     }
     private class noButtonHandler implements ActionListener{
@@ -184,13 +289,55 @@ public class WorkingClass extends JPanel implements ActionListener {
             //System.out.println("a: " + a);
             if(a==0){QuestionTF.setText("Please get ready! Are you ready now?");}
             else if (a==1){QuestionTF.setText("Are you ready?");}
-            else if(a==2){QuestionTF.setText("Are you Evil?");}
-            else if(a==3){QuestionTF.setText("Do you love Supers?");}
-            else if(a==4){QuestionTF.setText("Are you insanely Stretchy?");}
-            else if(a==5){QuestionTF.setText("Are you a Villain?");}
-            else if(a==6){QuestionTF.setText("Are you a Villain?");}
-            else if(a==7){QuestionTF.setText("Are you Violet?");}
-            else if(a==8){QuestionTF.setText("Are you uncontrollably strong?");}
+            else if(a==2){
+                QuestionTF.setText("Are you Evil?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==3){
+                QuestionTF.setText("Do you love Supers?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==4){
+                QuestionTF.setText("Are you insanely Stretchy?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==5){
+                QuestionTF.setText("Are you a Villain?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==6){
+                QuestionTF.setText("Are you a Villain?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==7){
+                QuestionTF.setText("Are you Violet?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==8){
+                QuestionTF.setText("Are you uncontrollably strong?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
             else if(a==9){QuestionTF.setText("Oh... well this is awkward...");}
             else if(a==10){QuestionTF.setText("Oh... well this is awkward...");}
             else if(a==11){QuestionTF.setText("Oh... well this is awkward...");}
@@ -200,7 +347,13 @@ public class WorkingClass extends JPanel implements ActionListener {
             else if(a==15){QuestionTF.setText("Oh... well this is awkward...");}
             else if(a==16){QuestionTF.setText("Oh... well this is awkward...");}
             else if(a==17){QuestionTF.setText("Oh... well this is awkward...");}
-            else if(a==18){QuestionTF.setText("Are you Jack Jack?");}
+            else if(a==18){
+                QuestionTF.setText("Are you Jack Jack?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
         }
     }
 }
