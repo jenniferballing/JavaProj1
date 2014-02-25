@@ -20,9 +20,8 @@ public class WorkingClass extends JPanel implements ActionListener {
     private static final int LENGTH = 300;
 
     private JButton YesB, NoB;
-    private JLabel QuestionL, TitleL;
-    private JTextField QuestionTF, counterTF, counterNum;
-    //private questionArr questionHandler;
+    private JLabel QuestionL, TitleL, counterTF, counterNum;
+    private JTextField QuestionTF;
     private yesButtonHandler yesHandler;
     private noButtonHandler noHandler;
 
@@ -36,15 +35,15 @@ public class WorkingClass extends JPanel implements ActionListener {
 
         JPanel ImagePanel = new JPanel();
         ImagePanel.setBackground(Color.BLACK);
-        ImagePanel.setPreferredSize(new Dimension(400,300));
+        ImagePanel.setPreferredSize(new Dimension(400,290));
 
         JPanel QuestionPanel = new JPanel();
         QuestionPanel.setBackground(Color.BLACK);
-        QuestionPanel.setPreferredSize(new Dimension(400, 250));
+        QuestionPanel.setPreferredSize(new Dimension(400, 230));
 
         JPanel TitlePanel= new JPanel();
         TitlePanel.setBackground(Color.BLACK);
-        TitlePanel.setPreferredSize(new Dimension(400,75));
+        TitlePanel.setPreferredSize(new Dimension(400,90));
 
         //ADD STUFF TO PANELS
         ImageIcon image = new ImageIcon("C:/Users/jensbaby/Documents/IncredibleImage.png");
@@ -53,31 +52,29 @@ public class WorkingClass extends JPanel implements ActionListener {
         panel.add( picLabel, BorderLayout.NORTH );
         ImagePanel.add(panel);
 
-        TitleL= new JLabel("Who is your Incredible alter-ego?");
+        TitleL= new JLabel("Who Is Your \'Incredible\' Alter-Ego?");
         TitleL.setForeground(Color.yellow);
         TitleL.setFont(TitleL.getFont().deriveFont(20f));
         TitlePanel.add(TitleL);
-        counterTF= new JTextField();
-        counterTF.setText("Questions left: ");
+        counterTF= new JLabel();
+        counterTF.setText("Questions Left: ");
         counterTF.setBackground(Color.BLACK);
-        counterTF.setFont(counterTF.getFont().deriveFont(16f));
+        counterTF.setFont(counterTF.getFont().deriveFont(10f));
         counterTF.setForeground(Color.WHITE);
         TitlePanel.add(counterTF);
-        counterTF.setEditable(false);
         counterTF.setHorizontalAlignment(JTextField.RIGHT);
 
-        counterNum= new JTextField();
+        counterNum= new JLabel();
         counterNum.setText("15");
         counterNum.setBackground(Color.BLACK);
-        counterNum.setFont(counterNum.getFont().deriveFont(16f));
+        counterNum.setFont(counterNum.getFont().deriveFont(14f));
         counterNum.setForeground(Color.WHITE);
         TitlePanel.add(counterNum);
-        counterNum.setEditable(false);
         counterNum.setHorizontalAlignment(JTextField.RIGHT);
 
-        QuestionL = new JLabel("Question: ", SwingConstants.LEFT);
-        QuestionL.setForeground(Color.white); //http://stackoverflow.com/questions/2966334/how-do-i-set-the-colour-of-a-label-coloured-text-in-java
-        QuestionL.setFont(QuestionL.getFont().deriveFont(16f));
+        QuestionL = new JLabel("If you were on the Incredibles who would you be?", SwingConstants.CENTER);
+        QuestionL.setForeground(Color.WHITE); //http://stackoverflow.com/questions/2966334/how-do-i-set-the-colour-of-a-label-coloured-text-in-java
+        QuestionL.setFont(QuestionL.getFont().deriveFont(14f));
 
         //Buttons
         YesB= new JButton("YES");
@@ -89,7 +86,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         //Text fields
         QuestionTF= new JTextField(35);
         QuestionTF.setBackground(Color.white);
-        QuestionTF.setFont(QuestionTF.getFont().deriveFont(14f));//http://stackoverflow.com/questions/6461506/jtextarea-default-font-very-small-in-windows
+        QuestionTF.setFont(QuestionTF.getFont().deriveFont(13f));//http://stackoverflow.com/questions/6461506/jtextarea-default-font-very-small-in-windows
         QuestionTF.setHorizontalAlignment(JTextField.CENTER);//http://www.daniweb.com/software-development/java/threads/21472/how-do-you-center-the-text-in-a-jtextfield
         QuestionTF.setText("Are you ready?");
         QuestionTF.setEditable(false);
@@ -143,7 +140,7 @@ public class WorkingClass extends JPanel implements ActionListener {
 
             String str= counterNum.getText();
             int in= Integer.parseInt(str);
-
+            QuestionL.setText("Question: ");
             if(a==0){QuestionTF.setText("Are you Super?");}
             else if(a==1){QuestionTF.setText("Are you Super?");}
             else if(a==2){
@@ -182,72 +179,55 @@ public class WorkingClass extends JPanel implements ActionListener {
                 counterNum.setText(Integer.toString(j));
             }
             else if(a==7){
-                QuestionTF.setText("Are you ElastiGirl?");}
-            else if(a==8){
-                QuestionTF.setText("Are you Dash?");}
-            else if(a==9){
-                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is a Villain!");
+                QuestionTF.setText("Are you ElastiGirl?");
                 String i=counterNum.getText();
                 int j=Integer.parseInt(i);
                 j--;
                 counterNum.setText(Integer.toString(j));
+            }
+            else if(a==8){
+                QuestionTF.setText("Are you Dash?");
+                String i=counterNum.getText();
+                int j=Integer.parseInt(i);
+                j--;
+                counterNum.setText(Integer.toString(j));
+            }
+            else if(a==9){
+                QuestionL.setText("Answer: ");
+                QuestionTF.setText("Awesome! Your Incredible Alter-Ego is a Villain!");
             }
             else if(a==10){
+                QuestionL.setText("Answer: ");
                 QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Edna Mode!");
-                String i=counterNum.getText();
-                int j=Integer.parseInt(i);
-                j--;
-                counterNum.setText(Integer.toString(j));
-            }
+                }
             else if(a==11){
+                QuestionL.setText("Answer: ");
                 QuestionTF.setText("Awesome! Your Incredible Alter-Ego is some random Civilian!");
-                String i=counterNum.getText();
-                int j=Integer.parseInt(i);
-                j--;
-                counterNum.setText(Integer.toString(j));
-            }
+                }
             else if(a==12){
+                QuestionL.setText("Answer: ");
                 QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Syndrome!");
-                String i=counterNum.getText();
-                int j=Integer.parseInt(i);
-                j--;
-                counterNum.setText(Integer.toString(j));
-            }
+                }
             else if(a==13){
+                QuestionL.setText("Answer: ");
                 QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Violet!");
-                String i=counterNum.getText();
-                int j=Integer.parseInt(i);
-                j--;
-                counterNum.setText(Integer.toString(j));
-            }
+                }
             else if(a==14){
+                QuestionL.setText("Answer: ");
                 QuestionTF.setText("Awesome! Your Incredible Alter-Ego is ElastiGirl!");
-                String i=counterNum.getText();
-                int j=Integer.parseInt(i);
-                j--;
-                counterNum.setText(Integer.toString(j));
-            }
+                }
             else if(a==15){
+                QuestionL.setText("Answer: ");
                 QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Mr. Incredible!");
-                String i=counterNum.getText();
-                int j=Integer.parseInt(i);
-                j--;
-                counterNum.setText(Integer.toString(j));
-            }
+                }
             else if(a==16){
+                QuestionL.setText("Answer: ");
                 QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Jack Jack!");
-                String i=counterNum.getText();
-                int j=Integer.parseInt(i);
-                j--;
-                counterNum.setText(Integer.toString(j));
-            }
+                }
             else if(a==17){
+                QuestionL.setText("Answer: ");
                 QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Dash!");
-                String i=counterNum.getText();
-                int j=Integer.parseInt(i);
-                j--;
-                counterNum.setText(Integer.toString(j));
-            }
+                }
             else if(a==18){
                 QuestionTF.setText("Are you Mr. Incredible?");
                 String i=counterNum.getText();
@@ -338,15 +318,42 @@ public class WorkingClass extends JPanel implements ActionListener {
                 j--;
                 counterNum.setText(Integer.toString(j));
             }
-            else if(a==9){QuestionTF.setText("Oh... well this is awkward...");}
-            else if(a==10){QuestionTF.setText("Oh... well this is awkward...");}
-            else if(a==11){QuestionTF.setText("Oh... well this is awkward...");}
-            else if(a==12){QuestionTF.setText("Oh... well this is awkward...");}
-            else if(a==13){QuestionTF.setText("Oh... well this is awkward...");}
-            else if(a==14){QuestionTF.setText("Oh... well this is awkward...");}
-            else if(a==15){QuestionTF.setText("Oh... well this is awkward...");}
-            else if(a==16){QuestionTF.setText("Oh... well this is awkward...");}
-            else if(a==17){QuestionTF.setText("Oh... well this is awkward...");}
+            else if(a==9){
+                QuestionTF.setText("Oh... well this is awkward...");
+                QuestionL.setText("Answer: ");
+            }
+            else if(a==10){
+                QuestionTF.setText("Oh... well this is awkward...");
+                QuestionL.setText("Answer: ");
+            }
+            else if(a==11){
+                QuestionTF.setText("Oh... well this is awkward...");
+                QuestionL.setText("Answer: ");
+            }
+            else if(a==12){
+                QuestionTF.setText("Oh... well this is awkward...");
+                QuestionL.setText("Answer: ");
+            }
+            else if(a==13){
+                QuestionTF.setText("Oh... well this is awkward...");
+                QuestionL.setText("Answer: ");
+            }
+            else if(a==14){
+                QuestionTF.setText("Oh... well this is awkward...");
+                QuestionL.setText("Answer: ");
+            }
+            else if(a==15){
+                QuestionTF.setText("Oh... well this is awkward...");
+                QuestionL.setText("Answer: ");
+            }
+            else if(a==16){
+                QuestionTF.setText("Oh... well this is awkward...");
+                QuestionL.setText("Answer: ");
+            }
+            else if(a==17){
+                QuestionTF.setText("Oh... well this is awkward...");
+                QuestionL.setText("Answer: ");
+            }
             else if(a==18){
                 QuestionTF.setText("Are you Jack Jack?");
                 String i=counterNum.getText();

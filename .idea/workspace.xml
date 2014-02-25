@@ -78,12 +78,12 @@
       <file leaf-file-name="WorkingClass.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WorkingClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="341" column="60" selection-start="13730" selection-end="13730" vertical-scroll-proportion="1.2475728" vertical-offset="5283" max-vertical-offset="6205">
+            <state line="74" column="43" selection-start="2641" selection-end="2641" vertical-scroll-proportion="0.37135923" vertical-offset="1105" max-vertical-offset="6324">
               <folding>
-                <element signature="e#0#14604#0" expanded="true" />
+                <element signature="e#0#14562#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#4575#4583#0" expanded="true" />
-                <element signature="e#10551#10559#0" expanded="true" />
+                <element signature="e#4491#4499#0" expanded="true" />
+                <element signature="e#9816#9824#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -449,12 +449,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkingClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="341" column="60" selection-start="13730" selection-end="13730" vertical-scroll-proportion="1.2475728" vertical-offset="5283" max-vertical-offset="6205">
+        <state line="74" column="43" selection-start="2641" selection-end="2641" vertical-scroll-proportion="0.37135923" vertical-offset="1105" max-vertical-offset="6324">
           <folding>
-            <element signature="e#0#14604#0" expanded="true" />
+            <element signature="e#0#14562#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#4575#4583#0" expanded="true" />
-            <element signature="e#10551#10559#0" expanded="true" />
+            <element signature="e#4491#4499#0" expanded="true" />
+            <element signature="e#9816#9824#0" expanded="true" />
           </folding>
         </state>
       </provider>
