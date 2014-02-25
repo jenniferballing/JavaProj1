@@ -26,15 +26,9 @@ public class WorkingClass extends JPanel implements ActionListener {
     private yesButtonHandler yesHandler;
     private noButtonHandler noHandler;
 
-    private BufferedImage image;
+    //private BufferedImage image;
 
     public WorkingClass(){
-
-        //IMAGE
-       try{
-           image= ImageIO.read(new File(""))
-       }
-
 
         //CREATE PANELS
         JPanel ContainerPanel= new JPanel();//http:stackoverflow.com/questions/10637788/jpanel-within-jframe
@@ -46,17 +40,28 @@ public class WorkingClass extends JPanel implements ActionListener {
 
         JPanel QuestionPanel = new JPanel();
         QuestionPanel.setBackground(Color.BLACK);
-        QuestionPanel.setPreferredSize(new Dimension(400, 100));
+        QuestionPanel.setPreferredSize(new Dimension(400, 250));
 
         JPanel TitlePanel= new JPanel();
         TitlePanel.setBackground(Color.BLACK);
+        TitlePanel.setPreferredSize(new Dimension(400,75));
 
         //ADD STUFF TO PANELS
+        ImageIcon image = new ImageIcon("C:/Users/jensbaby/Documents/IncredibleImage.png");
+        JLabel picLabel = new JLabel("", image, JLabel.CENTER);
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add( picLabel, BorderLayout.NORTH );
+        ImagePanel.add(panel);
+
         TitleL= new JLabel("Who is your Incredible alter-ego?");
         TitleL.setForeground(Color.yellow);
+        TitleL.setFont(TitleL.getFont().deriveFont(20f));
         TitlePanel.add(TitleL);
+
         QuestionL = new JLabel("Question: ", SwingConstants.LEFT);
         QuestionL.setForeground(Color.white); //http://stackoverflow.com/questions/2966334/how-do-i-set-the-colour-of-a-label-coloured-text-in-java
+        QuestionL.setFont(QuestionL.getFont().deriveFont(16f));
+
         //Buttons
         YesB= new JButton("YES");
         yesHandler= new yesButtonHandler();
@@ -65,8 +70,10 @@ public class WorkingClass extends JPanel implements ActionListener {
         noHandler= new noButtonHandler();
         NoB.addActionListener(noHandler);
         //Text fields
-        QuestionTF= new JTextField(15);
+        QuestionTF= new JTextField(35);
         QuestionTF.setBackground(Color.white);
+        QuestionTF.setFont(QuestionTF.getFont().deriveFont(14f));//http://stackoverflow.com/questions/6461506/jtextarea-default-font-very-small-in-windows
+        QuestionTF.setHorizontalAlignment(JTextField.CENTER);//http://www.daniweb.com/software-development/java/threads/21472/how-do-you-center-the-text-in-a-jtextfield
         QuestionTF.setText("Are you ready?");
         QuestionTF.setEditable(false);
         QuestionPanel.add(QuestionL);
@@ -74,15 +81,30 @@ public class WorkingClass extends JPanel implements ActionListener {
         QuestionPanel.add(YesB);
         QuestionPanel.add(NoB);
 
+        //ImagePanel.add(image);
+
         //SET PANEL LAYOUT
         ContainerPanel.setLayout(new FlowLayout(FlowLayout.CENTER));//ContainerPanel, FlowLayout(new FlowLayout()));
-        ContainerPanel.setPreferredSize(new Dimension(400, 400));
+        ContainerPanel.setPreferredSize(new Dimension(600, 500));
         ContainerPanel.add(TitlePanel);
         ContainerPanel.add(ImagePanel);
         ContainerPanel.add(QuestionPanel);
         add(ContainerPanel, BorderLayout.NORTH);
-}
 
+        //MAGE
+        /*try{
+            image= ImageIO.read(new File("C:/Users/jensbaby/Documents/IncredibleImage.png"));//http://stackoverflow.com/questions/9001754/path-for-image-loading
+        }catch (IOException ex){
+            System.out.println("Image didn't work, YET");
+        }*/
+
+    }
+
+    //@Override
+    /*protected void paintComponent (Graphics g){
+        super.paintComponent(g);
+        g.drawImage(image,0, 0, null);
+    }*/
     @Override
     public void actionPerformed(ActionEvent e) {
 
