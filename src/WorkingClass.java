@@ -11,9 +11,10 @@ import java.util.*;
 public class WorkingClass extends JPanel implements ActionListener {
 
     private JButton YesB, NoB;
-    private JLabel QuestionL, TitleL, counterTF, counterNum;
+    private JLabel QuestionL, TitleL, counterTF, counterNum, picLabel, image, CompScoreL, PlayScoreL, CompScoreTF, PlayScoreTF;
     private JTextField QuestionTF;
-    private JPanel ContainerPanel;
+    private JPanel ContainerPanel, ImagePanel, panel;
+    public ImageIcon FirstImg;
 
     public WorkingClass(){
 
@@ -21,52 +22,72 @@ public class WorkingClass extends JPanel implements ActionListener {
         ContainerPanel= new JPanel();//http:stackoverflow.com/questions/10637788/jpanel-within-jframe
         ContainerPanel.setBackground(Color.BLACK);
 
-        JPanel ImagePanel = new JPanel();
+        ImagePanel = new JPanel();
         ImagePanel.setBackground(Color.BLACK);
         ImagePanel.setPreferredSize(new Dimension(400,290));
 
         JPanel QuestionPanel = new JPanel();
         QuestionPanel.setBackground(Color.BLACK);
-        QuestionPanel.setPreferredSize(new Dimension(400, 230));
+        QuestionPanel.setPreferredSize(new Dimension(400, 250));
 
         JPanel TitlePanel= new JPanel();
         TitlePanel.setBackground(Color.BLACK);
-        TitlePanel.setPreferredSize(new Dimension(400,90));
+        TitlePanel.setPreferredSize(new Dimension(400,70));
 
         //ADD STUFF TO PANELS
         //FamilyPic
         ImageIcon image = new ImageIcon("C:/Users/jensbaby/Documents/IncredibleImage.png");
-        JLabel picLabel = new JLabel("", image, JLabel.CENTER);
-        JPanel panel = new JPanel(new BorderLayout());
+        picLabel = new JLabel ("", image, JLabel.CENTER);
+        panel = new JPanel(new BorderLayout());
         panel.add( picLabel, BorderLayout.NORTH );
         ImagePanel.add(panel);
 
+        //TITLE
         TitleL= new JLabel("Who Is Your \'Incredible\' Alter-Ego?");
         TitleL.setForeground(Color.yellow);
         TitleL.setFont(TitleL.getFont().deriveFont(20f));
         TitlePanel.add(TitleL);
+
+        //RUNNING TOTAL
+        CompScoreL= new JLabel("ComputerScore: ");
+        CompScoreL.setForeground(Color.white);
+        CompScoreL.setFont(CompScoreL.getFont().deriveFont(12f));
+        CompScoreTF= new JLabel("0");
+        CompScoreTF.setForeground(Color.WHITE);
+        CompScoreTF.setFont(CompScoreTF.getFont().deriveFont(12f));
+        PlayScoreL= new JLabel("Player Score: ");
+        PlayScoreL.setForeground(Color.white);
+        PlayScoreL.setFont(PlayScoreL.getFont().deriveFont(12f));
+        PlayScoreTF= new JLabel("0");
+        PlayScoreTF.setForeground(Color.WHITE);
+        PlayScoreTF.setFont(PlayScoreTF.getFont().deriveFont(12f));
+
+        //QUESTION COUNTER
         counterTF= new JLabel();
         counterTF.setText("Questions Left: ");
         counterTF.setBackground(Color.BLACK);
-        counterTF.setFont(counterTF.getFont().deriveFont(10f));
+        counterTF.setFont(counterTF.getFont().deriveFont(12f));
         counterTF.setForeground(Color.WHITE);
-        TitlePanel.add(counterTF);
-        counterTF.setHorizontalAlignment(JTextField.RIGHT);
 
+        //ADD TO PANEL
+        TitlePanel.add(CompScoreL);
+        TitlePanel.add(CompScoreTF);
+        TitlePanel.add(PlayScoreL);
+        TitlePanel.add(PlayScoreTF);
+        counterTF.setHorizontalAlignment(JTextField.RIGHT);
         counterNum= new JLabel();
         counterNum.setText("4");
         counterNum.setBackground(Color.BLACK);
-        counterNum.setFont(counterNum.getFont().deriveFont(14f));
+        counterNum.setFont(counterNum.getFont().deriveFont(13f));
         counterNum.setForeground(Color.WHITE);
-        TitlePanel.add(counterNum);
         counterNum.setHorizontalAlignment(JTextField.RIGHT);
 
-        QuestionL = new JLabel("If you were on the Incredibles who would you be?", SwingConstants.CENTER);
-        QuestionL.setForeground(Color.WHITE); //http://stackoverflow.com/questions/2966334/how-do-i-set-the-colour-of-a-label-coloured-text-in-java
-        QuestionL.setFont(QuestionL.getFont().deriveFont(14f));
+        //QUESTION LABEL
+        QuestionL = new JLabel("Think of who you would be if you were a character on The Incredibles.", SwingConstants.CENTER);
+        QuestionL.setForeground(Color.ORANGE); //http://stackoverflow.com/questions/2966334/how-do-i-set-the-colour-of-a-label-coloured-text-in-java
+        QuestionL.setFont(QuestionL.getFont().deriveFont(11f));
 
         //BUTTONS
-
         YesB= new JButton("YES");
         YesB.addActionListener( new ActionListener() {
             @Override
@@ -74,7 +95,6 @@ public class WorkingClass extends JPanel implements ActionListener {
                 yesButtonHandler(e);
             }
         });
-
         NoB= new JButton("NO");
         NoB.addActionListener( new ActionListener() {
             @Override
@@ -91,12 +111,15 @@ public class WorkingClass extends JPanel implements ActionListener {
         QuestionTF.setText("Are you ready?");
         QuestionTF.setEditable(false);
 
+        //ADD TO QUESTION PANEL
+        QuestionPanel.add(counterTF);
+        QuestionPanel.add(counterNum);
         QuestionPanel.add(QuestionL);
         QuestionPanel.add(QuestionTF);
         QuestionPanel.add(YesB);
         QuestionPanel.add(NoB);
 
-        //SET PANEL LAYOUT
+        //SET CONTAINER PANEL LAYOUT
         ContainerPanel.setLayout(new FlowLayout(FlowLayout.CENTER));//ContainerPanel, FlowLayout(new FlowLayout()));
         ContainerPanel.setPreferredSize(new Dimension(600, 500));
         ContainerPanel.add(TitlePanel);
@@ -138,8 +161,22 @@ public class WorkingClass extends JPanel implements ActionListener {
 
         String str= counterNum.getText();
         int in= Integer.parseInt(str);
+        QuestionL.setFont(QuestionTF.getFont().deriveFont(15f));
         QuestionL.setText("Question: ");
-        if(a==0){QuestionTF.setText("Are you Super?");}
+        if(a==0){
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/IncredibleImage.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
+            int j=4;
+            counterNum.setText(Integer.toString(j));
+
+            QuestionTF.setText("Are you Super?");
+        }
         else if(a==1){QuestionTF.setText("Are you Super?");}
         else if(a==2){
             QuestionTF.setText("Are you Male?");
@@ -191,38 +228,111 @@ public class WorkingClass extends JPanel implements ActionListener {
             counterNum.setText(Integer.toString(j));
         }
         else if(a==9){
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaVill.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
             QuestionL.setText("Answer: ");
             QuestionTF.setText("Awesome! Your Incredible Alter-Ego is a Villain!");
         }
         else if(a==10){
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaEdna.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
             QuestionL.setText("Answer: ");
             QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Edna Mode!");
         }
         else if(a==11){
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaVillain.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
             QuestionL.setText("Answer: ");
             QuestionTF.setText("Awesome! Your Incredible Alter-Ego is some random Civilian!");
         }
         else if(a==12){
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaSyn.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
             QuestionL.setText("Answer: ");
             QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Syndrome!");
         }
         else if(a==13){
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaViolet.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
             QuestionL.setText("Answer: ");
             QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Violet!");
         }
         else if(a==14){
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaElastiGirl.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
             QuestionL.setText("Answer: ");
             QuestionTF.setText("Awesome! Your Incredible Alter-Ego is ElastiGirl!");
         }
         else if(a==15){
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaMrI.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
             QuestionL.setText("Answer: ");
             QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Mr. Incredible!");
         }
+        //http://www.coderanch.com/t/340488/GUI/java/Adding-removing-components-JPanel
         else if(a==16){
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaJackJack.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
             QuestionL.setText("Answer: ");
             QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Jack Jack!");
         }
         else if(a==17){
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaDash.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
             QuestionL.setText("Answer: ");
             QuestionTF.setText("Awesome! Your Incredible Alter-Ego is Dash!");
         }
@@ -233,11 +343,21 @@ public class WorkingClass extends JPanel implements ActionListener {
             j--;
             counterNum.setText(Integer.toString(j));
         }
-        else if(in==0 || in<0){
+        if(in==0 || in<0){
             QuestionTF.setText("Uh oh. I'm out of Questions!");
+
+            String j= PlayScoreTF.getText();
+            int i= Integer.parseInt(j);
+            i++;
+            PlayScoreTF.setText(Integer.toString(i));
         }
         if(a==9||a==10||a==11||a==12||a==13||a==14||a==15||a==16||a==17){
             if(JOptionPane.showConfirmDialog(this, "Do you want to play again?")==JOptionPane.OK_OPTION){
+                String i=CompScoreTF.getText();
+                int j=Integer.parseInt(i);
+                j++;
+                CompScoreTF.setText(Integer.toString(j));
+
                 QuestionTF.setText("Are you ready?");
                 QuestionL.setText("Question: ");
             }
@@ -322,42 +442,6 @@ public class WorkingClass extends JPanel implements ActionListener {
             j--;
             counterNum.setText(Integer.toString(j));
         }
-        else if(a==9){
-            QuestionTF.setText("Oh... well this is awkward...");
-            QuestionL.setText("Answer: ");
-        }
-        else if(a==10){
-            QuestionTF.setText("Oh... well this is awkward...");
-            QuestionL.setText("Answer: ");
-        }
-        else if(a==11){
-            QuestionTF.setText("Oh... well this is awkward...");
-            QuestionL.setText("Answer: ");
-        }
-        else if(a==12){
-            QuestionTF.setText("Oh... well this is awkward...");
-            QuestionL.setText("Answer: ");
-        }
-        else if(a==13){
-            QuestionTF.setText("Oh... well this is awkward...");
-            QuestionL.setText("Answer: ");
-        }
-        else if(a==14){
-            QuestionTF.setText("Oh... well this is awkward...");
-            QuestionL.setText("Answer: ");
-        }
-        else if(a==15){
-            QuestionTF.setText("Oh... well this is awkward...");
-            QuestionL.setText("Answer: ");
-        }
-        else if(a==16){
-            QuestionTF.setText("Oh... well this is awkward...");
-            QuestionL.setText("Answer: ");
-        }
-        else if(a==17){
-            QuestionTF.setText("Oh... well this is awkward...");
-            QuestionL.setText("Answer: ");
-        }
         else if(a==18){
             QuestionTF.setText("Are you Jack Jack?");
             String i=counterNum.getText();
@@ -366,6 +450,22 @@ public class WorkingClass extends JPanel implements ActionListener {
             counterNum.setText(Integer.toString(j));
         }
         if(a==9||a==10||a==11||a==12||a==13||a==14||a==15||a==16||a==17){
+            QuestionTF.setText("Oh... well this is awkward...");
+            QuestionL.setText("Answer: ");
+
+            ImagePanel.removeAll();
+            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaVillain.png");
+            image = new JLabel(FirstImg);
+            image.setIcon(FirstImg);
+            ImagePanel.add(image);
+            ImagePanel.revalidate();
+            ImagePanel.repaint();
+
+            String i=PlayScoreTF.getText();
+            int j=Integer.parseInt(i);
+            j++;
+            PlayScoreTF.setText(Integer.toString(j));
+
             if(JOptionPane.showConfirmDialog(this, "Do you want to play again?")==JOptionPane.OK_OPTION){
                 QuestionTF.setText("Are you ready?");
                 QuestionL.setText("Question: ");
