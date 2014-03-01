@@ -165,7 +165,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         QuestionL.setText("Question: ");
         if(a==0){
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("../../IncredibleImage.png");
+            FirstImg = new ImageIcon(this.getClass().getResource("IncredibleImage.png"));
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);
@@ -229,7 +229,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         }
         else if(a==9){
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("../../JavaVill.png");//Idea to run program with images 2 files up given by Levi Balling
+            FirstImg = new ImageIcon(this.getClass().getResource("JavaVill.png"));//Idea to run program with images 2 files up given by Levi Balling
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);
@@ -241,7 +241,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         }
         else if(a==10){
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("../../JavaEdna.png");
+            FirstImg = new ImageIcon(this.getClass().getResource("JavaEdna.png"));
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);
@@ -253,7 +253,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         }
         else if(a==11){
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("../../JavaVillain.png");
+            FirstImg = new ImageIcon(this.getClass().getResource("JavaVillain.png"));
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);
@@ -265,7 +265,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         }
         else if(a==12){
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("../../JavaSyn.png");
+            FirstImg = new ImageIcon(this.getClass().getResource("JavaSyn.png"));
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);
@@ -277,7 +277,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         }
         else if(a==13){
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("../../JavaViolet.png");
+            FirstImg = new ImageIcon(this.getClass().getResource("JavaViolet.png"));
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);
@@ -289,7 +289,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         }
         else if(a==14){
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("../../JavaElastiGirl.png");
+            FirstImg = new ImageIcon(this.getClass().getResource("JavaElastiGirl.png"));
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);
@@ -301,7 +301,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         }
         else if(a==15){
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("../../JavaMrI.png");
+            FirstImg = new ImageIcon(this.getClass().getResource("JavaMrI.png"));
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);
@@ -314,7 +314,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         //http://www.coderanch.com/t/340488/GUI/java/Adding-removing-components-JPanel
         else if(a==16){
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("../../JavaJackJack.png");
+            FirstImg = new ImageIcon(this.getClass().getResource("JavaJackJack.png"));
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);
@@ -326,7 +326,7 @@ public class WorkingClass extends JPanel implements ActionListener {
         }
         else if(a==17){
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("../../JavaDash.png");
+            FirstImg = new ImageIcon(this.getClass().getResource("JavaDash.png"));
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);
