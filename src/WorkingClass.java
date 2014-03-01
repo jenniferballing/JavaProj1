@@ -454,7 +454,7 @@ public class WorkingClass extends JPanel implements ActionListener {
             QuestionL.setText("Answer: ");
 
             ImagePanel.removeAll();
-            FirstImg = new ImageIcon("C:/Users/jensbaby/Documents/JavaVillain.png");
+            FirstImg = new ImageIcon(this.getClass().getResource("JavaVillain.png"));
             image = new JLabel(FirstImg);
             image.setIcon(FirstImg);
             ImagePanel.add(image);

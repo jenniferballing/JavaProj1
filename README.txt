@@ -4,7 +4,7 @@ A00890700
 Assignment 6
 
 Compiled in InteleJ
-This project is intended to run two subdirectories from the root directory. (images are available two subdirectories down)
+(This project is intended to run with resources. The resources file is located in the project)
 
 ==Description==
 “20 Questions” style game. Theme is based on the movie The Incredibles.  There are 8 possible outcomes if the program is able to successfully ascertain the intended character. There is one contingency outcome if the intended character is not one of the 8 options.  The following information includes the question list and the path to each possible character:

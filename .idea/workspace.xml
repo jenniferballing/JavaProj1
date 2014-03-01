@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99958759-980b-4b95-a000-999c9c4d8d6e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.txt" afterPath="$PROJECT_DIR$/README.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkingClass.java" afterPath="$PROJECT_DIR$/src/WorkingClass.java" />
     </list>
     <ignored path="JavaProj1.iws" />
@@ -78,12 +79,11 @@
       <file leaf-file-name="WorkingClass.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WorkingClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="243" column="81" selection-start="9336" selection-end="9336" vertical-scroll-proportion="0.3117506" vertical-offset="3831" max-vertical-offset="6256">
+            <state line="456" column="83" selection-start="17477" selection-end="17477" vertical-scroll-proportion="0.6354916" vertical-offset="7317" max-vertical-offset="8075">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#5385#5393#0" expanded="true" />
-                <element signature="method#noButtonHandler#0;class#WorkingClass#0" expanded="false" />
                 <element signature="e#14225#14233#0" expanded="true" />
               </folding>
             </state>
@@ -460,7 +460,6 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#5385#5393#0" expanded="true" />
-            <element signature="method#noButtonHandler#0;class#WorkingClass#0" expanded="false" />
             <element signature="e#14225#14233#0" expanded="true" />
           </folding>
         </state>
@@ -480,7 +479,6 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#5385#5393#0" expanded="true" />
-            <element signature="method#noButtonHandler#0;class#WorkingClass#0" expanded="false" />
             <element signature="e#14225#14233#0" expanded="true" />
           </folding>
         </state>
@@ -495,12 +493,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkingClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="243" column="81" selection-start="9336" selection-end="9336" vertical-scroll-proportion="0.3117506" vertical-offset="3831" max-vertical-offset="6256">
+        <state line="456" column="83" selection-start="17477" selection-end="17477" vertical-scroll-proportion="0.6354916" vertical-offset="7317" max-vertical-offset="8075">
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#5385#5393#0" expanded="true" />
-            <element signature="method#noButtonHandler#0;class#WorkingClass#0" expanded="false" />
             <element signature="e#14225#14233#0" expanded="true" />
           </folding>
         </state>
